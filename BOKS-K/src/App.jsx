@@ -1,45 +1,37 @@
 import React from 'react';
+import { useEffect,useState } from 'react';
 import './App.css';
+import BookList from './assets/components/bookslists';
+import Searchbar from './assets/components/searchbar';
 
-import Layout from './assets/components/layout';
-import SearchResults from './assets/components/searchresults';
 
-
-const SearchResults = ({ searchQuery }) => {
+function bookResults(){
   const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("James+Bond")
+  const limiter = 1;
+  const pages = 1;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${searchTerm}`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=${searchTerm} &pages=${pages}&limiter=${limiter}`);
         const data = await response.json();
         setBooks(data.docs);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setBooks([])
       }
     };
 
-    if (searchQuery.length >= 3) {
-      fetchData();
-    }
-  }, [searchQuery]);}
+    fetchData()
+  }, [searchTerm]);
 
 
-function App() {
-  const [searchQuery, setSearchQuery] = React.useState('');
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-      <main>
-        <Layout>
-          {searchQuery.length >= 3? (
-            <SearchResults searchQuery={searchQuery} />
-          ) : (
-            <Home />
-          )}
-        </Layout>
-      </main>
-      </div>)}
+    <>
+    <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <BookList books={books} searchTerm={searchTerm} />
+    </>)}
+    export default bookResults;

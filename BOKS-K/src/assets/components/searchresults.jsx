@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import BookCard from './bookcard';
+import Bookcard from "./bookcard";
 
-const SearchResults = () => {
+export default function SearchResults({content}){
+    const thebooks = content?.docs;
+    console.log(content?.docs)
 
-  return (
-    <div>
-      <h2>Search Results</h2>
-      <ul>
-        {books.map((book) => (
-          <BookCard key={book.key} book={book} />
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default SearchResults;
+    return (
+    <span className="display-Books">
+        {thebooks?.map(Book => 
+        <Bookcard className="card" 
+            key={Book._version_} 
+            title={Book.title} 
+            first_publish_year={Book.first_publish_year}
+            author_name={singleBook.author_name}
+            ratings_average={singleBook.ratings_average}
+            img={imgbook.cover_img}>
+        </Bookcard>)}
+    </span>
+    )
+}
