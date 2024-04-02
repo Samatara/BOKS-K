@@ -11,9 +11,9 @@ export default function SearchResults({content}){
             key={Book._version_} 
             title={Book.title} 
             first_publish_year={Book.first_publish_year}
-            author_name={singleBook.author_name}
-            ratings_average={singleBook.ratings_average}
-            img={imgbook.cover_img}>
+            author_name={Book.author_name}
+            ratings_average={Book.ratings_average}
+            img={jpg_cover}>
         </Bookcard>)}
     </span>
     )
