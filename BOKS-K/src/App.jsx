@@ -1,22 +1,24 @@
-import { useState } from 'react';
-import { ReactDOM } from 'react';
-import {Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import layout from './assets/components/layout';
-import bookcard from './assets/components/bookcard';
+
+import Layout from './assets/components/layout';
 import SearchResults from './assets/components/searchresults';
 
+
 function App() {
-  
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   return (
-    <div>
-      <layout>
-        <SearchResults/>
-      </layout>
-    </div>
-     
-  )
-}
-
-export default App;
+    <div className="App">
+      <header className="App-header">
+      </header>
+      <main>
+        <Layout>
+          {searchQuery.length >= 3? (
+            <SearchResults searchQuery={searchQuery} />
+          ) : (
+            <Home />
+          )}
+        </Layout>
+      </main>
+      </div>)}

@@ -1,31 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import BookCard from './bookcard';
 
-function SearchResults() {
+const SearchResults = ({ searchQuery }) => {
   const [books, setBooks] = useState([]);
 
-  const fetchData = async () => {
-    const response = await fetch('https://openlibrary.org/subjects/james.bond.json');
-    const data = await response.json();
-    setBooks(data.books);
-  };
-
   useEffect(() => {
-    fetchData();
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://openlibrary.org/search.json?q=${searchTerm}`);
+        const data = await response.json();
+        setBooks(data.docs);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    if (searchQuery.length >= 3) {
+      fetchData();
+    }
+  }, [searchQuery]);
 
   return (
     <div>
-     {books.length > 0 && books.map((book) => (
-        <div key={book.key}>
-          <h2>{book.title}</h2>
-          <p>{book.first_publish_year}</p>
-          <p>{book.author_name}</p>
-          <p>{book.average_rating}</p>
-          <a href={`https://www.amazon.com/s?k=${book.amazon_id}`}>Search on Amazon</a>
-        </div>
-      ))}
+      <h2>Search Results</h2>
+      <ul>
+        {books.map((book) => (
+          <BookCard key={book.key} book={book} />
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default SearchResults;
