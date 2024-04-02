@@ -1,23 +1,17 @@
 import React from 'react';
 
-const BookCard = ({ book }) => {
-  const { title, first_publish_year, author_name, average_rating } = book;
+export default function Bookcard({keyBook, title, first_publish_year, author_name, ratings_average, coverImage, id_amazon}) {
 
-  return (
-    <li>
-      <h2>{title}</h2>
-      <p>
-        Published: {first_publish_year}
-        <br />
-        Author: {author_name.join(', ')}
-        <br />
-        Average Rating: {average_rating}
-      </p>
-      <a href={`https://www.amazon.com/s?k=${book.amazon_id}`} target="_blank" rel="noopener noreferrer">
-        View on Amazon
-      </a>
-    </li>
-  );
-};
-
-export default BookCard;
+    return (
+    <>
+        <article className="card" key={keyBook}>
+        <h3>{title}</h3>
+        <p>First publish year: {first_publish_year}</p>
+        <p>Author: {author_name}</p>
+        <p>Average rating: {ratings_average}</p>
+        <a href={`https://www.amazon.com/s?k=${book.amazon_id}`} target="_blank" rel="noopener noreferrer"/>
+        <img src={`https://covers.openlibrary.org/b/id/${jpg_cover}-L.jpg`} alt={title}/>
+        </article>
+    </>
+    )
+}
