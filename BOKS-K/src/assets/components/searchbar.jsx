@@ -13,11 +13,11 @@ const handleChange = (event)=>{
 }
 
   return (
-    <div>
+    <div className='searchbar'>
       <h1>Book Search</h1>
       <form onSubmit={handleSubmit}>
             <label htmlFor="search"></label>
-            <input type="text" id="search" placeholder="James Bond" onChange={handleChange}></input>
+            <input type="text" id="search" placeholder="søk har g" onChange={handleChange}></input>
             <input type="submit" value="Søk"></input>
         </form>
     </div>

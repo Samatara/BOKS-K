@@ -1,0 +1,69 @@
+/* App.css */
+
+
+.searchbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin-bottom: 20px;
+}
+
+.searchbar h1 {
+    color: #333; 
+    margin-bottom: 10px; 
+}
+
+.searchbar form {
+    display: flex; 
+    width: 50%; 
+}
+
+.searchbar input[type="text"] {
+    flex-grow: 1; 
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    margin-right: 10px;
+}
+
+.searchbar input[type="submit"] {
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    border: none; 
+    background-color: #333; 
+    color: #fff; 
+    cursor: pointer; 
+}
+
+.searchbar input[type="submit"]:hover {
+    background-color: #444; 
+}
+
+.book_list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0; 
+}
+
+.book_list li {
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    padding: 10px; 
+    transition: transform .2s; 
+}
+
+.book_list li:hover {
+    transform: scale(1.05); 
+}
+
+.søkt{
+    font-size: 1.2em; 
+    color: #333; 
+}
+
+ 

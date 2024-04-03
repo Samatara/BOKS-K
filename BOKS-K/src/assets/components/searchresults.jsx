@@ -1,11 +1,11 @@
 import Bookcard from "./bookcard";
-
+import React from "react";
 export default function SearchResults({content}){
     const thebooks = content?.docs;
     console.log(content?.docs)
 
     return (
-    <span className="display-Books">
+    <span className="book_cards">
         {thebooks?.map(Book => 
         <Bookcard className="card" 
             key={Book._version_} 
@@ -13,7 +13,7 @@ export default function SearchResults({content}){
             first_publish_year={Book.first_publish_year}
             author_name={Book.author_name}
             ratings_average={Book.ratings_average}
-            img={jpg_cover}>
+            jpg_cover={Book.cover_i}>
         </Bookcard>)}
     </span>
     )
