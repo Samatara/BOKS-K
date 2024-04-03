@@ -1,6 +1,5 @@
 
 
-
 .searchbar {
     display: flex;
     flex-direction: column;
@@ -42,47 +41,45 @@
     background-color: #444; 
 }
 
-
 .book_list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0; 
-    border-radius: 5px; 
-    padding: 20px; 
-    margin-bottom: 20px; 
+    
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .book_list h2 {
-    color: #333; 
-    margin-bottom: 10px; 
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
+    justify-content: center; 
 }
 
 .cards .card {
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    padding: 10px; 
-    transition: transform .2s; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform .2s;
 }
 
 .cards .card:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .cards .card img {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
 }
 
-.søkt{
-    font-size: 1.2em; 
-    color: #333; 
+.søkt {
+    font-size: 1.2em;
+    color: #333;
 }
-
- 
