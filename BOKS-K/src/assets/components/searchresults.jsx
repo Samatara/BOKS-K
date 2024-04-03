@@ -6,7 +6,7 @@ export default function SearchResults({content}){
 
     return (
     <span className="book_cards">
-        {thebooks && thebooks?.map((Book, index) => 
+        {thebooks?.map((Book, index) => 
     <Bookcard className="card" 
         key={index} 
         title={Book.title} 

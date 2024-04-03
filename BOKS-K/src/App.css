@@ -1,5 +1,15 @@
 
-
+body {
+    
+    color: #313131;
+    font-family: "Times New Roman", serif;
+    background-color: #673ab7;
+    background: linear-gradient(
+      45deg,
+      rgba(103,58,183,1) 0%,
+      rgba(138,34,170,1) 100%
+    );
+  }
 .searchbar {
     display: flex;
     flex-direction: column;
@@ -61,6 +71,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
     justify-content: center; 
+    background-color: white;
 }
 
 .cards .card {

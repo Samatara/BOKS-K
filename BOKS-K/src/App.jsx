@@ -14,7 +14,7 @@ function bookResults(){
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${searchTerm}`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=${searchTerm}&limit=2`);
         const data = await response.json();
         setBooks(data.docs);
       } catch (error) {
@@ -33,7 +33,7 @@ function bookResults(){
     <>
     <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     <BookList books={books} searchTerm={searchTerm} />
-    <SearchResults content={{ docs: books }} />
+   
    
     </>)}
     export default bookResults;
