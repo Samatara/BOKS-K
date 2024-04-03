@@ -3,13 +3,12 @@ import { useEffect,useState } from 'react';
 import './App.css';
 import BookList from './assets/components/bookslists';
 import Searchbar from './assets/components/searchbar';
-import Bookcard from './assets/components/bookcard';
 import SearchResults from './assets/components/searchresults';
 
 
 function bookResults(){
   const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("James+Bond")
+  const [searchTerm, setSearchTerm] = useState()
   
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function bookResults(){
     <>
     <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     <BookList books={books} searchTerm={searchTerm} />
-    
+    <SearchResults content={{ docs: books }} />
    
     </>)}
     export default bookResults;

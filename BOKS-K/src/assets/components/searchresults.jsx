@@ -6,15 +6,16 @@ export default function SearchResults({content}){
 
     return (
     <span className="book_cards">
-        {thebooks?.map(Book => 
-        <Bookcard className="card" 
-            key={Book._version_} 
-            title={Book.title} 
-            first_publish_year={Book.first_publish_year}
-            author_name={Book.author_name}
-            ratings_average={Book.ratings_average}
-            jpg_cover={Book.cover_i}>
-        </Bookcard>)}
+        {thebooks && thebooks?.map((Book, index) => 
+    <Bookcard className="card" 
+        key={index} 
+        title={Book.title} 
+        first_publish_year={Book.first_publish_year}
+        author_name={Book.author_name}
+        ratings_average={Book.ratings_average}
+        cover_i={Book.cover_i}>
+    </Bookcard>)}
+
     </span>
     )
 }
