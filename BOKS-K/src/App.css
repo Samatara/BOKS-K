@@ -4,7 +4,7 @@ body {
     color: #313131;
     font-family: "Times New Roman", serif;
     background-color: #673ab7;
-    background: linear-gradient(
+    background-color: linear-gradient(
       45deg,
       rgba(103,58,183,1) 0%,
       rgba(138,34,170,1) 100%
@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0; 
+    background-color: #b07bec; 
     border-radius: 5px; 
     padding: 20px; 
     margin-bottom: 20px;
@@ -51,15 +51,7 @@ body {
     background-color: #444; 
 }
 
-/* .book_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-} */
+
 
 .book_list h2 {
     display: flex;
@@ -73,11 +65,16 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
     justify-content:baseline; 
-    background-color: white;
+    background-color: linear-gradient(
+      45deg,
+      rgba(103,58,183,1) 0%,
+      rgba(138,34,170,1) 100%
+    );
 }
 
 .cards .card {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
+    background-color: cyan;
     border-radius: 5px;
     padding: 10px;
     transition: transform .2s;
