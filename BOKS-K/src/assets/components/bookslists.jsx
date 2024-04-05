@@ -10,7 +10,7 @@ export default function BookList({ books, searchTerm }) {
                         title={book.title}
                         first_publish_year={book.first_publish_year}
                         author_name={book.author_name}
-                        ratings_average={book.rating?.average}
+                        ratings_average={book.ratings_average}
                         cover_i={book.cover_i}
                     />
                 ))}

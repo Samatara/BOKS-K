@@ -3,12 +3,13 @@ import { useEffect,useState } from 'react';
 import './App.css';
 import BookList from './assets/components/bookslists';
 import Searchbar from './assets/components/searchbar';
-import SearchResults from './assets/components/searchresults';
+
 
 
 function bookResults(){
   const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState()
+  
   
 
   useEffect(() => {
@@ -21,11 +22,14 @@ function bookResults(){
         console.error('Error fetching data:', error);
         setBooks([])
       }
+      
     };
 
     fetchData()
   }, [searchTerm]);
 
+
+    
 
 
 
