@@ -62,6 +62,8 @@ body {
 } */
 
 .book_list h2 {
+    display: flex;
+    justify-content: center;
     color: #333;
     margin-bottom: 10px;
 }
